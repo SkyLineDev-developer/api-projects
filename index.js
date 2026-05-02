@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 const allowedOrigins = [
   "https://www.projects-page.skylinedev.com.co/",
+  "https://www.projects-page.skylinedev.com.co",
   "http://localhost:3000",
   "http://localhost:3001"
 ];
