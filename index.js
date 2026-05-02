@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 // Middlewares
 const allowedOrigins = [
   "https://www.projects-page.skylinedev.com.co",
-  "http://localhost:3000"
+  "http://localhost:3000/"
 ];
 
 app.use(cors({
