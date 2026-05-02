@@ -7,10 +7,23 @@ import { errorHandler } from "./src/middlewares/errorHandler.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middlewares
-app.use(cors());
+const allowedOrigins = [
+  "https://www.projects-page.skylinedev.com.co",
+  "http://localhost:3000"
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("No permitido por CORS"));
+    }
+  }
+}));
 app.use(express.json());
 
 // Rutas
